@@ -8,4 +8,17 @@ class ContributionProvider extends ChangeNotifier {
     _contributions = contributions;
     notifyListeners();
   }
+
+  void add(Contribution contribution) {
+    _contributions!.add(contribution);
+    notifyListeners();
+  }
+
+  double delete(String id) {
+    Contribution contribution =
+        _contributions!.firstWhere((element) => element.id == id);
+    _contributions!.remove(contribution);
+    notifyListeners();
+    return contribution.amount;
+  }
 }

@@ -35,7 +35,7 @@ dependencies:
   cloud_firestore:
   google_sign_in:
   provider:
-  simple_circular_progress_bar:
+
   intl:
 
   # The following adds the Cupertino Icons font to your application.

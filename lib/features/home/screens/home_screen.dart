@@ -1,8 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_goals/features/home/services/home_service.dart';
 import 'package:my_goals/features/task_details/screens/task_details_screen.dart';
-import 'package:my_goals/models/task_model.dart';
 import 'package:my_goals/providers/task_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -14,26 +13,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late HomeService _homeService;
   @override
   void initState() {
     super.initState();
-    fetchTasks();
-  }
-
-  void fetchTasks() async {
-    QuerySnapshot qs = await FirebaseFirestore.instance
-        .collection('tasks')
-        .where('createdBy', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
-        .get();
-    List<Task> tasks = [];
-    for (QueryDocumentSnapshot snap in qs.docs) {
-      Task task = Task.fromMap(snap.data() as Map<String, dynamic>);
-      task.id = snap.id;
-      tasks.add(task);
-    }
-    if (context.mounted) {
-      context.read<TaskProvider>().tasks = tasks;
-    }
+    _homeService = HomeService();
+    _homeService
+        .makeMockTask(context: context)
+        .then((value) => _homeService.fetchTasks(context: context));
   }
 
   @override
@@ -66,13 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => TaskDetailsScreen(
-                        task: provider.tasks![index],
+                        id: provider.tasks![index].id!,
                       ),
                     ),
                   );
                 },
                 title: Text(provider.tasks![index].title),
-                subtitle: Text(provider.tasks![index].id!),
+                subtitle: Text(
+                    '\$${provider.tasks![index].currentAmount.toString()}'),
               );
             },
           );

@@ -8,4 +8,10 @@ class TaskProvider extends ChangeNotifier {
     _tasks = tasks;
     notifyListeners();
   }
+
+  void modify(String id, double amount) {
+    int index = _tasks!.indexWhere((element) => element.id == id);
+    _tasks![index].currentAmount += amount;
+    notifyListeners();
+  }
 }

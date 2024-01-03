@@ -15,11 +15,15 @@ class Contribution {
 
   /// [contributedAt] date & time of contribution
   final DateTime contributedAt;
+
+  /// [id] of the contribution
+  String? id;
   Contribution({
     required this.task,
     required this.name,
     required this.amount,
     required this.contributedAt,
+    this.id,
   });
 
   Map<String, dynamic> toMap() {

@@ -13,7 +13,7 @@ class Task {
   final double finalAmount;
 
   /// [currentAmount] saved so far
-  final double currentAmount;
+  double currentAmount;
 
   /// [createdAt] date of creation of the task
   final DateTime createdAt;
