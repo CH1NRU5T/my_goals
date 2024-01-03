@@ -1,16 +1,51 @@
-# my_goals
+# Goals Project Setup Guide
 
-A new Flutter project.
+This guide will help you set up and run a Flutter project from a GitHub repository.
 
-## Getting Started
+## Prerequisites
 
-This project is a starting point for a Flutter application.
+- Ensure you have Flutter installed. Check the Flutter version on your system:
 
-A few resources to get you started if this is your first Flutter project:
+  ```bash
+  flutter --version
+  ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+If Flutter is not installed, follow the official Flutter installation guide at [Flutter.dev](https://flutter.dev/docs/get-started/install).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Have Git installed on your machine. You can download it from [Git - Downloads](https://git-scm.com/downloads).
+
+## Clone the Repository
+
+1. Open your terminal or command prompt.
+
+2. Clone the repository using the following command:
+
+   ```bash
+   git clone https://github.com/username/repository-name.git
+   ```
+
+   Replace `username` with the GitHub username and `repository-name` with the name of the repository.
+
+3. Navigate to the project directory:
+
+   ```bash
+   cd repository-name
+   ```
+
+## Running the Project
+
+1. Ensure you have an emulator/device connected or running.
+
+2. Run the following command to get dependencies:
+
+   ```bash
+   flutter pub get
+   ```
+
+3. To run the project, use:
+
+   ```bash
+   flutter run
+   ```
+
+   This will launch the app on the connected emulator/device.

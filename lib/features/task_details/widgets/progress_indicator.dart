@@ -50,22 +50,5 @@ class _CustomCircularProgressIndicatorState
         );
       },
     );
-    // return SimpleCircularProgressBar(
-    //   maxValue: widget.max,
-    //   animationDuration: 4,
-    //   valueNotifier: ValueNotifier<double>(widget.current),
-    //   size: 150,
-    //   onGetText: (value) {
-    //     return Text(
-    //       '\$${value.round()}\nYou saved',
-    //       textAlign: TextAlign.center,
-    //       style: const TextStyle(
-    //         fontSize: 16,
-    //         fontWeight: FontWeight.bold,
-    //         color: Colors.white,
-    //       ),
-    //     );
-    //   },
-    // );
   }
 }
