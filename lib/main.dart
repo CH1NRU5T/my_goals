@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:my_goals/features/auth/screens/auth_screen.dart';
 import 'package:my_goals/features/home/screens/home_screen.dart';
 import 'package:my_goals/firebase_options.dart';
+import 'package:my_goals/providers/task_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +47,10 @@ class InitScreen extends StatelessWidget {
           );
         }
         if (snapshot.hasData) {
-          return const HomeScreen();
+          return ChangeNotifierProvider(
+            create: (context) => TaskProvider(),
+            child: const HomeScreen(),
+          );
         }
         return const AuthScreen();
       },
