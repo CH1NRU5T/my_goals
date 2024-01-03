@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Task {
+  /// [id] of the task
+  String? id;
+
   /// [Title] of the task
   final String title;
 
@@ -27,6 +30,7 @@ class Task {
     required this.createdAt,
     required this.deadline,
     required this.createdBy,
+    this.id,
   });
 
   Task copyWith({

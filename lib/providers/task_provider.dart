@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_goals/features/models/task_model.dart';
+import 'package:my_goals/models/task_model.dart';
 
 class TaskProvider extends ChangeNotifier {
   List<Task>? _tasks;

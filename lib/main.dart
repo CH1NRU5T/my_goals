@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_goals/features/auth/screens/auth_screen.dart';
 import 'package:my_goals/features/home/screens/home_screen.dart';
 import 'package:my_goals/firebase_options.dart';
+import 'package:my_goals/providers/contribution_provider.dart';
 import 'package:my_goals/providers/task_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -12,7 +13,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (_) => TaskProvider(),
+    ),
+    ChangeNotifierProvider(
+      create: (_) => ContributionProvider(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -47,10 +55,7 @@ class InitScreen extends StatelessWidget {
           );
         }
         if (snapshot.hasData) {
-          return ChangeNotifierProvider(
-            create: (context) => TaskProvider(),
-            child: const HomeScreen(),
-          );
+          return const HomeScreen();
         }
         return const AuthScreen();
       },
