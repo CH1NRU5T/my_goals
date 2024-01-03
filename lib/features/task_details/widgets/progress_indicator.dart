@@ -25,7 +25,7 @@ class _CustomCircularProgressIndicatorState
             SizedBox(
               height: 150,
               width: 150,
-              child: CircularProgressIndicator.adaptive(
+              child: CircularProgressIndicator(
                 strokeWidth: 10,
                 strokeAlign: CircularProgressIndicator.strokeAlignCenter,
                 semanticsLabel: 'Progress',
