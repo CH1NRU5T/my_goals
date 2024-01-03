@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "208198550748",
+    "project_id": "my-goals-3f688",
+    "storage_bucket": "my-goals-3f688.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208198550748:android:22fa5a7cf06970bbd6a019",
+        "android_client_info": {
+          "package_name": "com.chinrust.my_goals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208198550748-6f28ebadk88ab3g83l2m25u3qjj69u22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chinrust.my_goals",
+            "certificate_hash": "2e670b7c8e97cf1ddccae2c7c907b50437b67950"
+          }
+        },
+        {
+          "client_id": "208198550748-frbjo630lq8sd7qmq4jb7qqncptiro3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxIixqJfLb1hRwH9qfQtTQl8PeqqaD510"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208198550748-frbjo630lq8sd7qmq4jb7qqncptiro3j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "208198550748-6j8257d1v9glm59f87rikj8gigt21m2r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chinrust.myGoals"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

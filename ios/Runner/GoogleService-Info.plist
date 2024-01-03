@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>208198550748-6j8257d1v9glm59f87rikj8gigt21m2r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.208198550748-6j8257d1v9glm59f87rikj8gigt21m2r</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>208198550748-6f28ebadk88ab3g83l2m25u3qjj69u22.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCyZ-wU37Rv1-JdW1WQlhnEMHGN0w37GLg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>208198550748</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.chinrust.myGoals</string>
+	<key>PROJECT_ID</key>
+	<string>my-goals-3f688</string>
+	<key>STORAGE_BUCKET</key>
+	<string>my-goals-3f688.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:208198550748:ios:f42a705d7bfd82d3d6a019</string>
+</dict>
+</plist>
