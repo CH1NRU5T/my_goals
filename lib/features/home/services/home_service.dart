@@ -45,7 +45,7 @@ class HomeService {
     }
   }
 
-  void fetchTasks({required BuildContext context}) async {
+  Future<void> fetchTasks({required BuildContext context}) async {
     try {
       QuerySnapshot qs = await FirebaseFirestore.instance
           .collection('tasks')

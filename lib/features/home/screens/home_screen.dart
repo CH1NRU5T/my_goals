@@ -5,19 +5,12 @@ import 'package:my_goals/features/task_details/screens/task_details_screen.dart'
 import 'package:my_goals/providers/task_provider.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  final HomeService _homeService = HomeService();
 
-class _HomeScreenState extends State<HomeScreen> {
-  late HomeService _homeService;
-  @override
-  void initState() {
-    super.initState();
-    _homeService = HomeService();
+  void init(BuildContext context) {
     _homeService
         .makeMockTask(context: context)
         .then((value) => _homeService.fetchTasks(context: context));
@@ -25,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    init(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Screen'),

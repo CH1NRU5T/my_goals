@@ -7,28 +7,18 @@ import 'package:my_goals/providers/contribution_provider.dart';
 import 'package:my_goals/providers/task_provider.dart';
 import 'package:provider/provider.dart';
 
-class TaskDetailsScreen extends StatefulWidget {
-  const TaskDetailsScreen({super.key, required this.id});
+class TaskDetailsScreen extends StatelessWidget {
+  TaskDetailsScreen({super.key, required this.id});
   final String id;
 
-  @override
-  State<TaskDetailsScreen> createState() => _TaskDetailsScreenState();
-}
-
-class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
-  late TaskDetailsService _taskDetailsService;
-  @override
-  void initState() {
-    super.initState();
-    _taskDetailsService = TaskDetailsService();
-    _taskDetailsService.fetchContributions(
-      id: widget.id,
-      context: context,
-    );
-  }
+  final TaskDetailsService _taskDetailsService = TaskDetailsService();
 
   @override
   Widget build(BuildContext context) {
+    _taskDetailsService.fetchContributions(
+      id: id,
+      context: context,
+    );
     return Scaffold(
       body: Column(
         children: [
@@ -47,7 +37,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
               child: Consumer<TaskProvider>(
                   builder: (context, taskProvider, child) {
                 Task task = taskProvider.tasks!
-                    .firstWhere((element) => element.id == widget.id);
+                    .firstWhere((element) => element.id == id);
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -157,7 +147,7 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                                   _taskDetailsService.deleteContribution(
                                     contributionID:
                                         provider.contributions![index].id!,
-                                    taskID: widget.id,
+                                    taskID: id,
                                     context: context,
                                   );
                                 },
@@ -187,12 +177,12 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                           Task task = context
                               .read<TaskProvider>()
                               .tasks!
-                              .firstWhere((element) => element.id == widget.id);
+                              .firstWhere((element) => element.id == id);
                           if (task.currentAmount >= task.finalAmount) {
                             return;
                           }
                           await _taskDetailsService.makeRandomContribution(
-                            id: widget.id,
+                            id: id,
                             context: context,
                           );
                         },

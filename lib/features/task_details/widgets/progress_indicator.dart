@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CustomCircularProgressIndicator extends StatefulWidget {
+class CustomCircularProgressIndicator extends StatelessWidget {
   const CustomCircularProgressIndicator(
       {super.key, required this.current, required this.max});
   final double current;
   final double max;
 
   @override
-  State<CustomCircularProgressIndicator> createState() =>
-      _CustomCircularProgressIndicatorState();
-}
-
-class _CustomCircularProgressIndicatorState
-    extends State<CustomCircularProgressIndicator> {
-  @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      tween: Tween(begin: 0.0, end: widget.current / widget.max),
+      tween: Tween(begin: 0.0, end: current / max),
       duration: const Duration(seconds: 1),
       builder: (context, value, child) {
         return Stack(
@@ -37,7 +30,7 @@ class _CustomCircularProgressIndicatorState
             ),
             Center(
               child: Text(
-                '\$${(value * widget.max).round()}\nYou saved',
+                '\$${(value * max).round()}\nYou saved',
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 16,
