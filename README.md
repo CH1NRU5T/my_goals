@@ -2,6 +2,26 @@
 
 This guide will help you set up and run a Flutter project from a GitHub repository.
 
+## Features
+- [X] Google Sign In.
+- [X] Real-time data retrieval with Firestore.
+- [X] UI state management to reflect changes in data.
+- [X] Data-driven calculations and UI updates.
+
+### Firestore rules that restrict access to authenticated users only
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
+
+## Demo Video
+[Demo Video Link](https://drive.google.com/file/d/1R4jPgzJHnNNJtyr-ii_hHDTbrSPWWsW6/view)
+
 ## Prerequisites
 
 - Ensure you have Flutter installed. Check the Flutter version on your system:
@@ -10,7 +30,7 @@ This guide will help you set up and run a Flutter project from a GitHub reposito
   flutter --version
   ```
 
-If Flutter is not installed, follow the official Flutter installation guide at [Flutter.dev](https://flutter.dev/docs/get-started/install).
+  If Flutter is not installed, follow the official Flutter installation guide at [Flutter.dev](https://flutter.dev/docs/get-started/install).
 
 - Have Git installed on your machine. You can download it from [Git - Downloads](https://git-scm.com/downloads).
 
@@ -21,15 +41,13 @@ If Flutter is not installed, follow the official Flutter installation guide at [
 2. Clone the repository using the following command:
 
    ```bash
-   git clone https://github.com/username/repository-name.git
+   git clone https://github.com/CH1NRU5T/my_goals
    ```
-
-   Replace `username` with the GitHub username and `repository-name` with the name of the repository.
 
 3. Navigate to the project directory:
 
    ```bash
-   cd repository-name
+   cd my_goals
    ```
 
 ## Running the Project
